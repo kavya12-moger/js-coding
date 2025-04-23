@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur code</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+       const li= document.createElement('li')
+        <!--by using createElement we can create any tags/elements in script-->
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').appendChild(li)
+        
+    }
+    addLanguage("python")
+    addLanguage("java")
+
+    function addLangOpti(langName){
+        const li= document.createElement('li')
+       <!--instead of using innerHTML use appendchild  -->
+
+       li.appendChild(document.createTextNode('li'))
+       document.querySelector('.language').appendChild(li)
+    }
+    addLangOpti('c')
+
+    //edit
+    const secondLang=document.querySelector("li:nth-child(2)")
+    const newli=document.createElement('li')
+    newli.textContent="mojo"
+    secondLang.replaceWith(newli)
+    
+    //edit
+    const firstLang=document.querySelector("li:first-child")
+    firstLang.outerHTML='<li>typecscript</li>'
+
+    //remove
+    const lastLang=document.querySelector("li:last-child")
+    lastLang.remove()
+
+</script>
+</html>
